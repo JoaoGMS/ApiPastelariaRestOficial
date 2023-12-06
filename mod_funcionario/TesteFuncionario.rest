@@ -1,0 +1,50 @@
+### Verbo GET – listar todos
+GET http://localhost:8000/funcionario/ HTTP/1.1
+### Verbo GET – listar um
+GET http://localhost:8000/funcionario/10 HTTP/1.1
+### Verbo POST – adicionar
+POST http://127.0.0.1:8000/funcionario/ HTTP/1.1
+content-type: application/json
+
+{
+    
+    "nome" : "Katia Reder", 
+    "matricula" : "88512",
+    "cpf" : "13960322070",
+    "telefone" : "4991283515",
+    "grupo" : 1,
+    "senha" : "Lyncas2023"
+}
+### Verbo PUT – atualiza
+PUT http://127.0.0.1:8000/funcionario/2 HTTP/1.1
+content-type: application/json
+
+{
+
+    "nome" : "João Gabriel Funcionario",
+    "cpf" : "12345678909",
+    "telefone" : "49898989",
+    "senha" : "abc",
+    "matricula" : "54321",
+    "grupo" : 2
+}
+### Verbo DELETE - excluir
+DELETE http://127.0.0.1:8000/funcionario/3 HTTP/1.1
+
+//O erro "405 Method Not Allowed" que você está vendo 
+//no log indica que uma solicitação POST para a rota
+// "/funcionario/" não é permitida no servidor. Esse
+// erro ocorre quando o servidor não está configurado
+// para lidar com solicitações POST nessa rota
+// específica. Para resolver esse problema, você pode
+// fazer o seguinte:
+
+
+
+//O código de status HTTP "422 Unprocessable Entity"
+// é geralmente usado para indicar que o servidor entendeu 
+//a solicitação do cliente, mas não pode processá-la porque
+// o corpo da solicitação contém dados inválidos ou não
+// processáveis. Este status é frequentemente usado em cenários
+// em que o servidor espera um determinado formato ou estrutura
+// de dados no corpo da solicitação e essa estrutura não é atendida.
